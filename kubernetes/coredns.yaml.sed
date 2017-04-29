@@ -7,7 +7,6 @@ data:
   Corefile: |
     .:53 {
         errors
-        log stdout
         health
         kubernetes CLUSTER_DOMAIN {
           cidrs SERVICE_CIDR
@@ -26,7 +25,7 @@ metadata:
     kubernetes.io/cluster-service: "true"
     kubernetes.io/name: "CoreDNS"
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       k8s-app: coredns
